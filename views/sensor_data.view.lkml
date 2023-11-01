@@ -31,7 +31,8 @@ view: sensor_data {
 
     sql: 'https://cdn.britannica.com/80/149180-050-23E41CF0/topographic-map.jpg' ;;
 
-    html: <video width="290" height="130" controls preload="none"> <controls> <source src="{{ value }}" type="video/mp4"> </video> ;;
+    html:<p><img alt="Hover" onmouseout="this.src='https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif';" onmouseover="this.src='https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif';" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>
+  ;;
 
   }
 
@@ -40,6 +41,7 @@ view: sensor_data {
   dimension: location_name {
     type: number
     sql: ${TABLE}.Location_Name ;;
+
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -83,6 +85,10 @@ view: sensor_data {
     type: string
     sql: ${TABLE}.Sensor_Type ;;
   }
+  dimension: product_image {
+    sql: ${sensor_id} ;;
+    html: <img src="https://www.altostrat.com/product_images/{{ value }}.jpg" /> ;;
+  }
 
   dimension: type_measure {
     type: string
@@ -92,4 +98,5 @@ view: sensor_data {
     type: count
     drill_fields: [sensor_details*]
   }
+
 }

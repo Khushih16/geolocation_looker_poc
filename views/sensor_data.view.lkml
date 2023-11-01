@@ -12,7 +12,7 @@ view: sensor_data {
     # This dimension will be called "Lat Long" in Explore.
 
   dimension: lat_long {
-    type: string
+    type: location
     map_layer_name: countries
     sql: ${TABLE}.Lat_Long ;;
     drill_fields: [sensor_details*]
@@ -25,7 +25,15 @@ view: sensor_data {
       sensor_type]
   }
 
+  dimension: video {
 
+    type: string
+
+    sql: 'https://cdn.britannica.com/80/149180-050-23E41CF0/topographic-map.jpg' ;;
+
+    html: <video width="290" height="130" controls preload="none"> <controls> <source src="{{ value }}" type="video/mp4"> </video> ;;
+
+  }
 
   dimension: location_name {
     type: number

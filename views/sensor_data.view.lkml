@@ -37,6 +37,7 @@ view: sensor_data {
 
 
 
+
   dimension: location_name {
     type: number
     sql: ${TABLE}.Location_Name ;;

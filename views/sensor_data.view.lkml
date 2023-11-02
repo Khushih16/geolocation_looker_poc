@@ -68,7 +68,9 @@ view: sensor_data {
   dimension: sensor_id {
     type: string
     sql: ${TABLE}.Sensor_ID ;;
+    html:<p><audio alt="Hover" onmouseout="this.src='https://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a';" onmouseover="this.src='https://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a';" src="https://commondatastorage.googleapis.com/codeskulptor-assets/week7-bounce.m4a" /></p>;;
   }
+
 
   dimension: sensor_location {
     type: string

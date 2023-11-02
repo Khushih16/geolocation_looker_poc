@@ -22,7 +22,9 @@ view: sensor_data {
     fields: [sensor_id,
       sensor_name,
       type_measure,
-      sensor_type]
+      sensor_type,
+      Video_url,
+      Audio_url]
   }
 
   # dimension: video {
@@ -32,10 +34,10 @@ view: sensor_data {
   # }
   dimension: video {
     type: string
-    sql: 'https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif' ;;
+    sql: 'https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif' ;;
     # html: <p><img alt="Hover" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>;;
     html: <head>
-  <p><img id="hover-image" alt="Hover" onmouseover="showImage();" onmouseout="hideImage();" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>
+  <p><img id="hover-image" alt="Hover" onmouseover="showImage();" onmouseout="hideImage();" src="https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif" /></p>
   <script>
   // Function to display the image when hovering
   function showImage() {
@@ -65,6 +67,18 @@ function hideImage() {
           <audio id="audio" src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg"></audio>
         </body> ;;
       }
+
+  dimension: Video_url {
+    type: string
+    sql: "https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif" ;;
+    html:"<a href="https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif">https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif</a>" ;;
+                       }
+
+  dimension: Audio_url {
+    type: string
+    sql: "https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3" ;;
+    html: "<a href="https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3">https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3</a>" ;;
+                      }
 
 
 #   dimension: audio {

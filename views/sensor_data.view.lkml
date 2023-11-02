@@ -7,9 +7,9 @@ view: sensor_data {
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
-    # Here's what a typical dimension looks like in LookML.
-    # A dimension is a groupable field that can be used to filter query results.
-    # This dimension will be called "Lat Long" in Explore.
+  # Here's what a typical dimension looks like in LookML.
+  # A dimension is a groupable field that can be used to filter query results.
+  # This dimension will be called "Lat Long" in Explore.
 
   dimension: lat_long {
     type: location
@@ -25,18 +25,65 @@ view: sensor_data {
       sensor_type]
   }
 
+  # dimension: video {
+  #   type: string
+  #   sql: 'https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif' ;;
+  #   html:<p><img alt="Hover" onmouseover="play();" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>;;
+  # }
   dimension: video {
-
     type: string
-
-    sql: 'https://cdn.britannica.com/80/149180-050-23E41CF0/topographic-map.jpg' ;;
-
-    html:<p><img alt="Hover" onmouseout="this.src='https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif';" onmouseover="this.src='https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif';" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>
-  ;;
-
+    sql: 'https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif' ;;
+    # html: <p><img alt="Hover" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>;;
+    html: <head>
+  <p><img id="hover-image" alt="Hover" onmouseover="showImage();" onmouseout="hideImage();" src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" /></p>
+  <script>
+  // Function to display the image when hovering
+  function showImage() {
+    var image = document.getElementById('hover-image');
+    image.style.display = 'block';
   }
+function hideImage() {
+    var image = document.getElementById('hover-image');
+    image.style.display = 'none';
+  }
+</script>
+</head>;;
+}
+
+  dimension: audio {
+    type: string
+    sql: 'https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg' ;;
+    html: </head>
+     <script>
+            function playAudio() {
+              var audio = document.getElementById("audio");
+              console.log(audio)
+              audio.play();
+            }
+          </script>
+        <body>
+          <audio id="audio" src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg"></audio>
+        </body> ;;
+      }
 
 
+#   dimension: audio {
+#     type: string
+#     sql: 'https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg' ;;
+#   # html: <p><audio alt="Hover" controls> <source src="horse.ogg" type="audio/ogg"><source src="horse.mp3" type="audio/mpeg"></audio></p> ;;
+#     #html:<p><audio alt="Hover" onmouseout="this.src='horse.ogg';" onmouseover="this.src='horse.ogg';" src="horse.ogg" /></p>;;
+#     html: </head>
+# <body>
+#   <script>
+#       function play(){
+#           var audio = document. getElementById("audio")
+#           audio.play();
+#       }
+#   </script>
+#     <img src="https://media.tenor.com/lJ3nu6akejIAAAAM/smoke-alarms-market.gif" value="PLAY" onmouseover="play();">
+#     <audio id="audio" src="https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg"></audio>
+# </body> ;;
+#   }
 
   dimension: location_name {
     type: number

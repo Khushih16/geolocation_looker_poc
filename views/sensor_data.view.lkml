@@ -85,14 +85,15 @@ Your browser does not support the video tag.
   dimension: Video_url {
     type: string
     sql: "https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif" ;;
-    html:"<a href="https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif">https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif</a>" ;;
+    html:"<a href="https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif" target="_blank">https://c.tenor.com/8R3oafo0ilkAAAAM/alarm.gif</a>" ;;
                        }
 
   dimension: Audio_url {
     type: string
     sql: "https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3" ;;
-    html: "<a href="https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3">https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3</a>" ;;
-                      }
+    #html: "<a href="https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3" target="_blank">https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3</a>" ;;
+    html: "<a href="https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3" onclick='window.open("https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3");return false;'>https://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3</a>" ;;
+    }
 
 
 #   dimension: audio {
